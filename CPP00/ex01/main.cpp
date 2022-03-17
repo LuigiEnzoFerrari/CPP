@@ -1,10 +1,19 @@
 #include "PhoneBook.hpp"
 
+int	get_index() {
+	int	index;
+
+	std::cout << "select a index" << std::endl;
+	std::cin >> std::ws;
+	std::cin >> index;
+	return (index);
+}
+
 int main(void) {
 	std::string input;
 	PhoneBook phone;
-	Contacts contato;
-
+	Contact contato;
+    Contact().
 	while (42) {
 		std::cout << "Enter one of the following three commands" << std::endl;
 		std::cout << "ADD SEARCH EXIT" << std::endl;

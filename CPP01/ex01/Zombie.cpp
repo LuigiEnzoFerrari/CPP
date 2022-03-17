@@ -1,6 +1,9 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string naming) {
+Zombie::Zombie() {
+    this->name = "lenzo";
+}
+void    Zombie::create_zombie(std::string naming) {
     this->name = naming;
 }
 

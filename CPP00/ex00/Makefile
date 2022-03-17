@@ -1,4 +1,4 @@
-NAME=phonebook
+NAME=megaphone
 
 CC=g++
 CCFLAGS= -Wall -Werror -Wextra -std=c++98

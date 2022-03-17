@@ -1,12 +1,13 @@
-NAME=phonebook
+NAME=zombie
 
 CC=g++
 CCFLAGS= -Wall -Werror -Wextra -std=c++98
 
-SRCS=main.cpp Contact.cpp PhoneBook.cpp
+SRCS=main.cpp Zombie.cpp zombieHorde.cpp
 OBJS=$(SRCS:%.cpp=%.o)
 OBJS_DIR=./objects
 OBJS_PATH=$(addprefix $(OBJS_DIR)/, $(OBJS))
+
 all:$(NAME)
 
 $(NAME):$(SRCS)
