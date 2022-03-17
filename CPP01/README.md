@@ -48,3 +48,14 @@ To free a array
 ```c++
 delete[] name_of_array;
 ```
+
+## ex02  
+When a variable is declared as a reference, it becomes an alternative name for an existing variable. A variable can be declared as a reference by putting ‘&’ in the declaration. 
+
+https://www.geeksforgeeks.org/pointers-vs-references-cpp/
+
+## ex03
+
+Member Initializer Lists
+https://www.youtube.com/watch?v=1nfuYMXjZsA
+https://www.geeksforgeeks.org/constructor-overloading-c/
