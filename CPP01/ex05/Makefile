@@ -1,9 +1,9 @@
-NAME=war
+NAME=Harl
 
 CC=g++
 CCFLAGS= -Wall -Werror -Wextra -std=c++98
 
-SRCS=main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS=main.cpp Harl.cpp
 OBJS=$(SRCS:%.cpp=%.o)
 OBJS_DIR=./objects
 OBJS_PATH=$(addprefix $(OBJS_DIR)/, $(OBJS))

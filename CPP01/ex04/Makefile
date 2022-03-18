@@ -1,9 +1,9 @@
-NAME=war
+NAME=replacements
 
 CC=g++
 CCFLAGS= -Wall -Werror -Wextra -std=c++98
 
-SRCS=main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS=main.cpp replace_strings.cpp
 OBJS=$(SRCS:%.cpp=%.o)
 OBJS_DIR=./objects
 OBJS_PATH=$(addprefix $(OBJS_DIR)/, $(OBJS))

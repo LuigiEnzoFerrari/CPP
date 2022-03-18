@@ -12,7 +12,6 @@ class HumanB {
 		HumanB(std::string name, Weapon tool);
 		void	attack();
 		void	setWeapon(Weapon tool);
-
 };
 
 #endif

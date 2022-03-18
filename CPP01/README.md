@@ -59,3 +59,16 @@ https://www.geeksforgeeks.org/pointers-vs-references-cpp/
 Member Initializer Lists
 https://www.youtube.com/watch?v=1nfuYMXjZsA
 https://www.geeksforgeeks.org/constructor-overloading-c/
+
+## ex04
+
+ifstream to read
+ofstream to write
+
+### ex05
+
+https://stackoverflow.com/questions/5093090/whats-the-syntax-for-declaring-an-array-of-function-pointers-without-using-a-se
+
+https://stackoverflow.com/questions/1485983/calling-c-member-functions-via-a-function-pointer
+
+https://opensource.com/article/21/2/ccc-method-pointers#:~:text=Pointers%20to%20methods&text=Each%20class%20type%20in%20C%2B%2B,principle%20also%20enables%20dynamic%20dispatch.
