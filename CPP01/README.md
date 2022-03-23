@@ -65,10 +65,17 @@ https://www.geeksforgeeks.org/constructor-overloading-c/
 ifstream to read
 ofstream to write
 
-### ex05
+## ex05
 
 https://stackoverflow.com/questions/5093090/whats-the-syntax-for-declaring-an-array-of-function-pointers-without-using-a-se
 
 https://stackoverflow.com/questions/1485983/calling-c-member-functions-via-a-function-pointer
 
 https://opensource.com/article/21/2/ccc-method-pointers#:~:text=Pointers%20to%20methods&text=Each%20class%20type%20in%20C%2B%2B,principle%20also%20enables%20dynamic%20dispatch.
+
+## ex06
+### The Orthodox Canonical Class Form
+A default constructor: used internally to initialize objects and data members when no other value is available.  
+A copy constructor: used in the implementation of call-by-value parameters.  
+An assignment operator: used to assign one value to another.  
+A destructor: Invoked when an object is deleted.  

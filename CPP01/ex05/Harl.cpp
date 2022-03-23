@@ -1,5 +1,12 @@
 #include "Harl.hpp"
 
+Harl::Harl(const Harl& rhs) {
+}
+
+Harl& Harl::operator=(const Harl& rhs) {
+	return (*this);
+}
+
 void    Harl::debug( void ) {
 	std::cout <<
 	"I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!"

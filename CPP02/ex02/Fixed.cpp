@@ -5,6 +5,10 @@ int Fixed::bits = 8;
 Fixed::Fixed( void ): value(0) {
 }
 
+Fixed::Fixed( const Fixed& src ) {
+    this->setRawBits( src.getRawBits() );
+}
+
 Fixed::Fixed( const int raw ) {
 	this->setRawBits( raw << Fixed::bits );
 }
@@ -101,26 +105,19 @@ std::ostream& operator<<( std::ostream& os, const Fixed& src ) {
 	return (os);
 }
 
- const Fixed& Fixed::max(const Fixed &a, const Fixed &b) {
+const Fixed& Fixed::max(const Fixed &a, const Fixed &b) {
 	if (a.getRawBits() > b.getRawBits())
 		return (a);
 	return (b);
 }
 
-
- const Fixed& Fixed::min(const Fixed &a, const Fixed &b) {
+const Fixed& Fixed::min(const Fixed &a, const Fixed &b) {
 	if (a.getRawBits() < b.getRawBits())
 		return (a);
 	return (b);
 }
 
 Fixed::~Fixed() {
-}
-// Create a copy of all the content of class passed;
-
-Fixed::Fixed( Fixed const &src ) {
-	this->value = src.value;
-	*this = src;
 }
 
 int	Fixed::getRawBits() const {

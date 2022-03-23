@@ -7,3 +7,6 @@ https://www.tutorialspoint.com/how-to-initialize-private-static-members-in-cplus
 
 https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/
 
+https://www.programiz.com/cpp-programming/increment-decrement-operator-overloading
+
+https://www.learncpp.com/cpp-tutorial/overloading-the-comparison-operators/
