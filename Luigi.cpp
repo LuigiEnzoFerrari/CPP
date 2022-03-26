@@ -1,13 +1,15 @@
 #include "Luigi.hpp"
 
-Luigi::Luigi() {}
-Luigi::~Luigi() {}
-
-Luigi &Luigi::operator=(const Luigi& rhs) {
-    return (*this);
-}
-// Create a copy of all the content of class passed;
+Luigi::Luigi( void ) {}
+Luigi::~Luigi( void ) {}
 
 Luigi::Luigi(Luigi const &Luigi) {
     *this = Luigi;
+}
+
+Luigi &Luigi::operator=(const Luigi& rhs) {
+    if (this == &rhs) {
+
+    }
+    return (*this);
 }

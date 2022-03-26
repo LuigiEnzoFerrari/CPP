@@ -6,7 +6,7 @@ class Luigi {
 		Luigi( void );
 		Luigi( const Luigi& src );
 		Luigi&	operator=( const Luigi& rhs );
-		~Luigi();
+		~Luigi( void );
 	private:
 };
 #endif
