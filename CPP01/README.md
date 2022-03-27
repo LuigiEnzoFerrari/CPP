@@ -60,6 +60,13 @@ Member Initializer Lists
 https://www.youtube.com/watch?v=1nfuYMXjZsA
 https://www.geeksforgeeks.org/constructor-overloading-c/
 
+HumanA and HumanB
+HumanA can have a reference or a pointer to the Weapon.
+Ideally, it should be implemented as a reference, since the Weapon exists
+from creation until destruction, and never changes.
+HumanB must have a pointer to a Weapon since the field is not set at
+creation time, and the weapon can be NULL.
+
 ## ex04
 
 ifstream to read

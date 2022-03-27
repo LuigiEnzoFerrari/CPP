@@ -24,36 +24,12 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat& rhs) {
 	return (*this);
 }
 
-Bureaucrat   &Bureaucrat::operator++( void ) {
-	this->grade_ = this->getGrade() - 1;
-	return (*this);
-}
-
-Bureaucrat   Bureaucrat::operator++( int ) {
-	Bureaucrat temp(*this);
-
-	this->grade_ = this->getGrade() + 1;
-	return (temp);
-}
-
-Bureaucrat&	Bureaucrat::operator--( void ) {
-	this->grade_ = this->getGrade() - 1;
-	return (*this);
-}
-
-Bureaucrat   Bureaucrat::operator--( int ) {
-	Bureaucrat temp(*this);
-
-	this->grade_ = this->getGrade() - 1;
-	return (temp);
-}
-
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
-				return "Grade is Too High";
+				return "TooFuckingHigh";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
-				return "Grade is Too Low";
+				return "TooFuckingLow";
 }
 
 const	std::string Bureaucrat::getName( void ) const {
@@ -79,6 +55,17 @@ void	Bureaucrat::removeGrade( int remove ) {
 		throw Bureaucrat::GradeTooHighException();
 	} else if (this->grade_ > 150) {
 		throw Bureaucrat::GradeTooLowException();
+	}
+}
+
+void	Bureaucrat::signForm( Form &signedForm ) {
+	if (signedForm.getSigned() == true) {
+		std::cout << this->name_ << " signed " << signedForm.getName() << std::endl;
+	} else {
+		std::cout << this->name_ << " couldn't sign " << signedForm.getName()
+		<< " because "
+		<< "Or he has Low Grade or he didn't fill the form, other Low Grade bureaucrat did it."
+		<< std::endl;
 	}
 }
 
