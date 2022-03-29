@@ -6,11 +6,12 @@
 
 # include "Bureaucrat.hpp"
 
+class	Bureaucrat;
 
 class Form {
 	public:
 		Form( void );
-		Form( std::string name, bool isSigned, int grade, int gradeExec );
+		Form( std::string name, int grade, int gradeExec );
 		Form( const Form& src );
 		Form&	operator=( const Form& rhs );
 		~Form( void );

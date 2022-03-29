@@ -11,7 +11,7 @@ int main( void ) {
 	std::cout << "Is signed? " << formulario.getSigned() << std::endl;
 	std::cout << std::endl;
 
-	Form custom("Custom Form", true, 10, 10);
+	Form custom("Custom Form", 10, 10);
 
 	std::cout << "Custom formulario for default." << std::endl;
 	std::cout << "Name " << custom.getName() << std::endl;
@@ -20,11 +20,11 @@ int main( void ) {
 	std::cout << "Is signed? " << custom.getSigned() << std::endl;
 	std::cout << std::endl;
 
-	Bureaucrat boy;
+	Bureaucrat lenzo;
 
 	std::cout << "Create a Default bureaucrat (lenzo)." << std::endl;
-	std::cout << "Name " << boy.getName() << std::endl;
-	std::cout << "Grade "  << boy.getGrade() << std::endl;
+	std::cout << "Name " << lenzo.getName() << std::endl;
+	std::cout << "Grade "  << lenzo.getGrade() << std::endl;
 	std::cout << std::endl;
 
 	Bureaucrat gadino("Gariadno", 4);
@@ -36,15 +36,15 @@ int main( void ) {
 
 	std::cout << "Sign lenzo to custom Form" << std::endl;
 	try {
-		custom.beSigned(boy);
+		custom.beSigned(lenzo);
 		std::cout << "Signed sucessed" << std::endl;
 	} catch(std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
-	boy.signForm(custom);
+	lenzo.signForm(custom);
 	std::cout << std::endl;
 
-	std::cout << "Asign gariadno to custom Form" << std::endl;
+	std::cout << "Sign gariadno to custom Form" << std::endl;
 	try {
 		custom.beSigned(gadino);
 		std::cout << "Signed sucessed" << std::endl;
@@ -53,6 +53,8 @@ int main( void ) {
 	}
 	gadino.signForm(custom);
 	std::cout << std::endl;
+
+    std::cout << formulario << std::endl;
 
 	return (0);
 }

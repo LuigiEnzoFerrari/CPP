@@ -59,14 +59,14 @@ void	Bureaucrat::removeGrade( int remove ) {
 }
 
 void	Bureaucrat::signForm( Form &signedForm ) {
-	if (signedForm.getSigned() == true) {
+    try {
+        signedForm.beSigned(*this);
 		std::cout << this->name_ << " signed " << signedForm.getName() << std::endl;
-	} else {
-		std::cout << this->name_ << " couldn't sign " << signedForm.getName()
-		<< " because "
-		<< "Or he has Low Grade or he didn't fill the form, other Low Grade bureaucrat did it."
-		<< std::endl;
-	}
+    } catch (std::exception &e) {
+        std::cout << this->getName()
+            << " couldn't sign "<< signedForm.getName()
+            << " because " << e.what() << std::endl;
+    }
 }
 
 std::ostream& operator<<( std::ostream& os, const Bureaucrat& src ) {

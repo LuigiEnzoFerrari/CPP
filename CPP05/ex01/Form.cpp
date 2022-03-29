@@ -7,9 +7,9 @@ Form::Form( void ):
 	gradeExec_(75){
 }
 
-Form::Form( std::string name, bool isSigned, int grade, int gradeExec ):
+Form::Form( std::string name, int grade, int gradeExec ):
 	name_(name),
-	isSigned_(isSigned),
+	isSigned_(false),
 	gradeMin_(grade),
 	gradeExec_(gradeExec) {
 	if ( this->gradeMin_ < 1 || this->gradeExec_ < 1 ) {
