@@ -1,10 +1,14 @@
-NAME=form
+NAME=forms
 
 CC=c++
 CCFLAGS= -Wall -Werror -Wextra -std=c++98
 SANIT= -g -fsanitize=address
 
-SRCS=main.cpp Bureaucrat.cpp Form.cpp
+SRCS=main.cpp Bureaucrat.cpp Form.cpp \
+	PresidentialPardonForm.cpp \
+	RobotmyRequestForm.cpp \
+	ShrubberyCreationForm.cpp \
+
 OBJS=$(SRCS:%.cpp=%.o)
 OBJS_DIR=./objects
 OBJS_PATH=$(addprefix $(OBJS_DIR)/, $(OBJS))
