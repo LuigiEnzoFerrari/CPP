@@ -9,3 +9,5 @@ static_cast<type> (expr) − The static_cast operator performs a nonpolymorphic 
 https://www.cplusplus.com/doc/oldtutorial/typecasting/
 
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/serialization/#:~:text=Serialization%20is%20the%20process%20of,reverse%20process%20is%20called%20deserialization.
+
+https://stackoverflow.com/questions/351845/finding-the-type-of-an-object-in-c
