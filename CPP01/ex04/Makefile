@@ -1,4 +1,4 @@
-NAME=replacements
+NAME=exec
 
 CC=g++
 CCFLAGS= -Wall -Werror -Wextra -std=c++98

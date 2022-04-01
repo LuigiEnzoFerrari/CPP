@@ -13,7 +13,6 @@ int main(void) {
 	std::string input;
 	PhoneBook phone;
 	Contact contato;
-    Contact().
 	while (42) {
 		std::cout << "Enter one of the following three commands" << std::endl;
 		std::cout << "ADD SEARCH EXIT" << std::endl;

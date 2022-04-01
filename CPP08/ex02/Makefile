@@ -1,4 +1,4 @@
-NAME=mutant
+NAME=exec
 
 CC=c++
 CCFLAGS= -Wall -Werror -Wextra -std=c++98

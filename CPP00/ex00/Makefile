@@ -1,26 +1,35 @@
-NAME=megaphone
+NAME := exec
 
-CC=g++
-CCFLAGS= -Wall -Werror -Wextra -std=c++98
+CC := c++
+CFLAGS := -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
+RM := rm -rf
 
-SRCS=main.cpp
-OBJS=$(SRCS:.cpp=.o)
-OBJS_DIR=./objects
-OBJS_PATH=$(addprefix $(OBJS_DIR)/, $(OBJS))
+SRCSDIR := ./srcs
+OBJDIR := ./objs
+# HEADERS := $(SRCS:.cpp=.hpp)
 
-all:$(NAME)
+SRCS := main.cpp
+OBJS := $(notdir $(SRCS:.cpp=.o))
 
-$(NAME):$(OBJS_PATH)
-	echo $(OBJS_PATH)
-	$(CC) $(CFLAGS) $< -o $@
+$(OBJDIR)/%.o:	$(SRCSDIR)/%.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJS_DIR)/%.o:./%.cpp
-	$(CC) $(CCFLAGS) -c $< -o $@
+all:	$(NAME)
+
+$(NAME): $(OBJDIR)/$(OBJS)
+	$(CC) $(CFLAGS) $(OBJDIR)/$(OBJS) -o $@
+
+$(OBJDIR)/$(OBJS): | $(OBJDIR)
+
+$(OBJDIR):
+	mkdir $(OBJDIR)
 
 clean:
-	$(RM) $(OBJS_PATH)
+	$(RM) $(OBJDIR)
 
 fclean: clean
 	$(RM) $(NAME)
 
-re: all fclean
+re: fclean all
+
+.PHONY: all clean fclean re
