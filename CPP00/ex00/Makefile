@@ -6,7 +6,6 @@ RM := rm -rf
 
 SRCSDIR := ./srcs
 OBJDIR := ./objs
-# HEADERS := $(SRCS:.cpp=.hpp)
 
 SRCS := main.cpp
 OBJS := $(notdir $(SRCS:.cpp=.o))

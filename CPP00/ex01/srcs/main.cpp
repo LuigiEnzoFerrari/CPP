@@ -1,11 +1,19 @@
 #include "PhoneBook.hpp"
+#include <iterator>
+#include <stdlib.h>
 
 int	get_index() {
 	int	index;
+    std::string    str;
 
 	std::cout << "select a index" << std::endl;
 	std::cin >> std::ws;
-	std::cin >> index;
+	std::cin >> str;
+    for (std::string::iterator it = str.begin(); it != str.end(); ++it) {
+        if (!isdigit(*it))
+            return -1;
+    }
+    index = atoi(str.c_str());
 	return (index);
 }
 
@@ -23,7 +31,7 @@ int main(void) {
 		}
 		else if (input.compare("SEARCH") == 0) {
 			phone.print_contacts();
-			std::cout << "Choose one index man" << std::endl;
+			std::cout << "Choose one index" << std::endl;
 			phone.print_contact(get_index());
 		}
 		else if (input.compare("EXIT") == 0)

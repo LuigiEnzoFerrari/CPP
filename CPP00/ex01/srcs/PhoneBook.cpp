@@ -29,7 +29,7 @@ void	PhoneBook::print_contact(int i) {
 }
 
 void	PhoneBook::print_contacts() {
-    for (int i = 0; i < n || i == 7; i++) {
+    for (int i = 0; i < n && i <= 7; i++) {
         print_contact(i);
     }
 }
