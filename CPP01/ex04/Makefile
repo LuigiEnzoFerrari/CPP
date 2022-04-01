@@ -1,25 +1,36 @@
-NAME=exec
+NAME := exec
 
-CC=g++
-CCFLAGS= -Wall -Werror -Wextra -std=c++98
+CC := c++
+CFLAGS := -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 
-SRCS=main.cpp replace_strings.cpp
-OBJS=$(SRCS:%.cpp=%.o)
-OBJS_DIR=./objects
-OBJS_PATH=$(addprefix $(OBJS_DIR)/, $(OBJS))
+SRCSDIR := ./srcs
+SRCS := main.cpp replaceString.cpp
+SRCS_PATHS := $(addprefix $(SRCSDIR)/, $(SRCS))
 
-all:$(NAME)
+OBJDIR := ./objs/
+OBJS := $(addprefix $(OBJDIR), $(notdir $(SRCS_PATHS:.cpp=.o)))
 
-$(NAME):$(SRCS)
-	$(CC) $(CFLAGS) $(SRCS) -o $@
+INC := -I./include/
 
-# $(OBJS_DIR)/%.o:./%.cpp
-# 	$(CC) $(CCFLAGS) -c $< -o $@
+$(OBJDIR)%.o: ./srcs/%.cpp
+	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@
+
+$(OBJS): | $(OBJDIR)
+
+$(OBJDIR):
+	mkdir $(OBJDIR)
 
 clean:
-	$(RM) $(OBJS_PATH)
+	$(RM) -r $(OBJDIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) -r $(NAME)
 
-re: all fclean
+re: fclean all
+
+.PHONY: all clean fclean re

@@ -1,11 +1,10 @@
 NAME := exec
 
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
-
+CFLAGS := -Wall -Wextra -Werror -g -fsanitize=address
 
 SRCSDIR := ./srcs
-SRCS := main.cpp Zombie.cpp  zombieHorde.cpp
+SRCS := main.cpp Harl.cpp
 SRCS_PATHS := $(addprefix $(SRCSDIR)/, $(SRCS))
 
 OBJDIR := ./objs/

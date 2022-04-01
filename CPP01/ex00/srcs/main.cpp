@@ -9,6 +9,6 @@ int main(void) {
     new_zombie = newZombie("Michael Jackson");
     new_zombie->annouce();
     delete new_zombie;
-    randomChump("sankarea");
+    randomChump("Kisara");
     return (0);
 }

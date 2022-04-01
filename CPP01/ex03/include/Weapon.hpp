@@ -4,10 +4,10 @@
 
 class Weapon {
 	private:
-		std::string	type;
+		std::string	_type;
 	public:
-		Weapon(std::string initial_type);
-		const	std::string	getType();
+		Weapon(std::string type);
+		const	std::string	getType( void );
 		void	setType(std::string type);
 };
 

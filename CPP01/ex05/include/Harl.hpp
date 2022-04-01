@@ -9,11 +9,11 @@ class Harl {
 		void    warning( void );
 		void    error( void );
 	public:
-		Harl(void);
-		Harl(const Harl& rhs);
-		Harl&   operator=(const Harl& rhs);
+		Harl( void );
+		Harl( const Harl& rhs );
+		Harl&   operator=( const Harl& rhs );
 		void    complain( std::string level);
-		~Harl();
+		~Harl( void );
 };
 
 #endif

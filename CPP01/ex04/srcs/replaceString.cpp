@@ -1,8 +1,7 @@
-#include "header.hpp"
+#include "replaceString.hpp"
 
-std::string	replace_strings(std::string text, std::string from, std::string to) {
+std::string	replaceString(std::string text, std::string from, std::string to) {
 	std::string all;
-	std::cout << text << std::endl;
 	std::size_t found = text.find(from);
 	if (found == std::string::npos)
 		return (text);
