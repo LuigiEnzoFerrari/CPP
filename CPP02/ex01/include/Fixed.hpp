@@ -10,14 +10,14 @@ class Fixed {
 		Fixed( const int raw );
 		Fixed( const float raw );
 		Fixed&	operator=( const Fixed& rhs );
-		~Fixed();
+		~Fixed( void );
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
 	private:
-		int	value;
-		static const int	bits;
+		int _value;
+		static const int	_bits;
 };
 std::ostream& operator<<( std::ostream& os, const Fixed& src );
 #endif

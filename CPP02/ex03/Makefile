@@ -4,7 +4,7 @@ CC := c++
 CFLAGS := -Wall -Wextra -Werror -g -fsanitize=address
 
 SRCSDIR := ./srcs
-SRCS := main.cpp Fixed.cpp
+SRCS := main.cpp Fixed.cpp Point.cpp bsp.cpp
 SRCS_PATHS := $(addprefix $(SRCSDIR)/, $(SRCS))
 
 OBJDIR := ./objs/

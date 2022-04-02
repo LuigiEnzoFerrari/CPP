@@ -24,16 +24,18 @@ class Fixed {
 		Fixed	operator-( const Fixed& rhs );
 		Fixed	operator*( const Fixed& rhs );
 		Fixed	operator/( const Fixed& rhs );
-		~Fixed();
+		~Fixed( void );
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
+		static const Fixed& max(Fixed &a, Fixed &b);
 		static const Fixed& max(const Fixed &a, const Fixed &b);
+		static const Fixed& min(Fixed &a, Fixed &b);
 		static const Fixed& min(const Fixed &a, const Fixed &b);
 	private:
-		int	value;
-		static int	bits;
+		int	_value;
+		static int	_bits;
 };
 std::ostream& operator<<( std::ostream& os, const Fixed& src );
 #endif
