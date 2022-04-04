@@ -9,11 +9,15 @@ class ClapTrap {
 		ClapTrap( const std::string name );
 		ClapTrap( const ClapTrap& src );
 		ClapTrap&	operator=( const ClapTrap& rhs );
-		~ClapTrap();
-		void	attack(const std::string& target);
-		void	takeDamage(uint32_t amount);
-		void	beRepaired(uint32_t amount);
-	private:
+		~ClapTrap( void );
+		void		attack( const std::string& target );
+		void		takeDamage( uint32_t amount );
+		void		beRepaired( uint32_t amount );
+		uint32_t	getHitPoints( void ) const;
+		uint32_t	getEnergyPoints( void ) const;
+		std::string	getName( void ) const;
+
+	protected:
 		std::string name_;
 		uint32_t	hit_points_;
 		uint32_t	energy_points_;

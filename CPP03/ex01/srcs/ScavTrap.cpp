@@ -14,7 +14,7 @@ ScavTrap::ScavTrap( std::string name ): ClapTrap( name ) {
 	std::cout << "name ScavTrap constructor has been called" << std::endl;
 }
 
-ScavTrap::~ScavTrap() {
+ScavTrap::~ScavTrap( void ) {
 	std::cout << "default ScavTrap destructor has been called" << std::endl;
 }
 
@@ -27,7 +27,7 @@ ScavTrap &ScavTrap::operator=( const ScavTrap& rhs ) {
 	return (*this);
 }
 
-ScavTrap::ScavTrap( ScavTrap const &src ) {
+ScavTrap::ScavTrap( ScavTrap const &src ): ClapTrap(src) {
 	std::cout << "Copy ScavTrap constructor has been called" << std::endl;
     this->attack_damage_ = src.attack_damage_;
     this->energy_points_ = src.energy_points_;

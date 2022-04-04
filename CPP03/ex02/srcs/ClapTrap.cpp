@@ -1,14 +1,15 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap( void ): name_("lenzo"), hit_points_(10), energy_points_(10), attack_damage_(0) {
-	std::cout << "default constructor has been called" << std::endl;
+	std::cout << "Default ClapTrap constructor has been called" << std::endl;
 }
 
 ClapTrap::ClapTrap( const std::string name ): name_(name), hit_points_(10), energy_points_(10), attack_damage_(0) {
+    std::cout << "Name ClapTrap constructor has been called" << std::endl;
 }
 
-ClapTrap::~ClapTrap() {
-	std::cout << "default destructor has been called" << std::endl;
+ClapTrap::~ClapTrap( void ) {
+	std::cout << "Default ClapTrap destructor has been called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=( const ClapTrap& rhs ) {
@@ -18,11 +19,11 @@ ClapTrap &ClapTrap::operator=( const ClapTrap& rhs ) {
 		this->hit_points_ = rhs.hit_points_;
 		this->name_ = rhs.name_;
 	}
-	return (*this);
+	return ( *this );
 }
 
 ClapTrap::ClapTrap( ClapTrap const &src ) {
-	std::cout << "Copy constructor has been called" << std::endl;
+	std::cout << "Copy ClapTrap constructor has been called" << std::endl;
 	this->attack_damage_ = src.attack_damage_;
 	this->energy_points_ = src.energy_points_;
 	this->hit_points_ = src.hit_points_;
@@ -47,24 +48,31 @@ void	ClapTrap::beRepaired( uint32_t amount ) {
 		return ;
 	}
 	this->hit_points_ += amount;
-	std::cout << "ClapTrap " + this->name_ + " recovery " + std::to_string(amount) +
-		". Hit Points: " + std::to_string(this->hit_points_) + ", Energy Points: "
-		+ std::to_string(this->energy_points_)
-		<< std::endl;
-		this->energy_points_--;
+    this->energy_points_--;
+	std::cout
+        << "ClapTrap " << this->name_
+        << " recovery " << std::to_string(amount)
+        << std::endl;
 }
 
 void    ClapTrap::takeDamage( uint32_t amount ) {
-	if (this->energy_points_ == 0) {
-		std::cout << "There is no energy_points left." << std::endl;
-		return ;
-	}
 	if (hit_points_ >= amount)
 		this->hit_points_ -= amount;
 	else
 		this->hit_points_ = 0;
-	std::cout << "ClapTrap " + this->name_ + " takes " + std::to_string(amount) +
-		" of damage, Hit Points: " + std::to_string(this->hit_points_) +
-		" Energy points: " + std::to_string(this->energy_points_)
-		<< std::endl;
+	std::cout << "ClapTrap " + this->name_
+        << " takes " + std::to_string(amount)
+        << std::endl;
+}
+
+uint32_t ClapTrap::getHitPoints( void ) const {
+    return (this->hit_points_);
+}
+
+uint32_t ClapTrap::getEnergyPoints( void ) const {
+    return (this->energy_points_);
+}
+
+std::string ClapTrap::getName( void ) const {
+    return (this->name_);
 }
