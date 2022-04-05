@@ -23,7 +23,7 @@ class Form {
         virtual void    execute( Bureaucrat& bure ) const = 0;
 
 	private:
-		const std::string	name_;
+		const std::string	_name;
 		bool				isSigned_;
 		const int			gradeMin_;
 		const int			gradeExec_;

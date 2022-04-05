@@ -22,7 +22,7 @@ class Bureaucrat {
         void    executeForm( Form const& form);
 
 	private:
-		const std::string	name_;
+		const std::string	_name;
 		int	grade_;
 
     protected:

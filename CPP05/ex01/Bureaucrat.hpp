@@ -21,7 +21,7 @@ class Bureaucrat {
         void    signForm ( Form &signedForm );
 
 	private:
-		const std::string	name_;
+		const std::string	_name;
 		int	grade_;
 
 		struct GradeTooLowException : public std::exception {

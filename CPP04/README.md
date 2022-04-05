@@ -1,8 +1,36 @@
-#ex00
+NAME := exec
 
-https://www.geeksforgeeks.org/virtual-function-cpp/
+CC := c++
+CFLAGS := -Wall -Wextra -Werror -g -fsanitize=address
 
-https://www.youtube.com/watch?v=T8f4ajtFU9g
+SRCSDIR := ./srcs
+SRCS := main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS_PATHS := $(addprefix $(SRCSDIR)/, $(SRCS))
 
+OBJDIR := ./objs/
+OBJS := $(addprefix $(OBJDIR), $(notdir $(SRCS_PATHS:.cpp=.o)))
 
-https://stackoverflow.com/a/41552967
+INC := -I./include/
+
+$(OBJDIR)%.o: ./srcs/%.cpp
+	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@
+
+$(OBJS): | $(OBJDIR)
+
+$(OBJDIR):
+	mkdir $(OBJDIR)
+
+clean:
+	$(RM) -r $(OBJDIR)
+
+fclean: clean
+	$(RM) -r $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

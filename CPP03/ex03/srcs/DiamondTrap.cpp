@@ -44,7 +44,6 @@ void    DiamondTrap::whoAmI( void ) const {
     std::cout << "I am a ClapTrap named " << ClapTrap::_name << std::endl;
 }
 
-
 std::string DiamondTrap::getName( void ) const {
 	return (this->_name);
 }

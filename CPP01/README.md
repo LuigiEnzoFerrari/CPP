@@ -46,7 +46,7 @@ WhenIGone::~WhenIgone() {
 To free a array
 
 ```c++
-delete[] name_of_array;
+delete[] _nameof_array;
 ```
 
 ## ex02  

@@ -21,7 +21,7 @@ class Bureaucrat {
 		void	removeGrade( int remove );
 
 	private:
-		const std::string	name_;
+		const std::string	_name;
 		int	grade_;
 
 		struct GradeTooLowException : public std::exception {

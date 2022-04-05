@@ -1,14 +1,14 @@
 #include "Form.hpp"
 
 Form::Form( void ):
-	name_("Default Form"),
+	_name("Default Form"),
 	isSigned_(false),
 	gradeMin_(75),
 	gradeExec_(75) {
 }
 
 Form::Form( std::string name, int grade, int gradeExec ):
-	name_(name),
+	_name(name),
 	isSigned_(false),
 	gradeMin_(grade),
 	gradeExec_(gradeExec) {
@@ -20,7 +20,7 @@ Form::Form( std::string name, int grade, int gradeExec ):
 }
 
 Form::Form(Form const &src):
-	name_(src.getName()),
+	_name(src.getName()),
 	isSigned_(src.getSigned()),
 	gradeMin_(src.getGradeMin()),
 	gradeExec_(src.getGradeExec()) {
@@ -49,7 +49,7 @@ const char *Form::IsNotSignedToExecute::what() const throw() {
 }
 
 const	std::string Form::getName( void ) const {
-	return (this->name_);
+	return (this->_name);
 }
 
 bool	Form::getSigned( void ) const {

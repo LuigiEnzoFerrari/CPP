@@ -21,7 +21,7 @@ class Form {
 		bool	getSigned( void ) const;
 		void	beSigned( Bureaucrat& bure );
 	private:
-		const std::string	name_;
+		const std::string	_name;
 		bool				isSigned_;
 		const int			gradeMin_;
 		const int			gradeExec_;
