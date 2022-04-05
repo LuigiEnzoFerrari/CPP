@@ -1,15 +1,15 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap( void ): _name("lenzo"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
-	std::cout << "Default constructor has been called" << std::endl;
+	std::cout << "Default ClapTrap constructor has been called" << std::endl;
 }
 
 ClapTrap::ClapTrap( const std::string name ): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
-    std::cout << "Constructor with name has been called" << std::endl;
+	std::cout << "Name ClapTrap constructor has been called" << std::endl;
 }
 
 ClapTrap::~ClapTrap( void ) {
-	std::cout << "Default destructor has been called" << std::endl;
+	std::cout << "Default ClapTrap destructor has been called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=( const ClapTrap& rhs ) {
@@ -23,7 +23,7 @@ ClapTrap &ClapTrap::operator=( const ClapTrap& rhs ) {
 }
 
 ClapTrap::ClapTrap( ClapTrap const &src ) {
-	std::cout << "Copy constructor has been called" << std::endl;
+	std::cout << "Copy ClapTrap constructor has been called" << std::endl;
 	this->_attackDamage = src._attackDamage;
 	this->_energyPoints = src._energyPoints;
 	this->_hitPoints = src._hitPoints;
@@ -48,11 +48,11 @@ void	ClapTrap::beRepaired( uint32_t amount ) {
 		return ;
 	}
 	this->_hitPoints += amount;
-    this->_energyPoints--;
+	this->_energyPoints--;
 	std::cout
-        << "ClapTrap " << this->_name
-        << " recovery " << std::to_string(amount)
-        << std::endl;
+		<< "ClapTrap " << this->_name
+		<< " recovery " << std::to_string(amount)
+		<< std::endl;
 }
 
 void    ClapTrap::takeDamage( uint32_t amount ) {
@@ -61,18 +61,23 @@ void    ClapTrap::takeDamage( uint32_t amount ) {
 	else
 		this->_hitPoints = 0;
 	std::cout << "ClapTrap " + this->_name
-        << " takes " + std::to_string(amount)
-        << std::endl;
+		<< " takes " + std::to_string(amount)
+		<< std::endl;
 }
 
 uint32_t ClapTrap::getHitPoints( void ) const {
-    return (this->_hitPoints);
+	return (this->_hitPoints);
 }
 
 uint32_t ClapTrap::getEnergyPoints( void ) const {
-    return (this->_energyPoints);
+	return (this->_energyPoints);
 }
 
 std::string ClapTrap::getName( void ) const {
-    return (this->_name);
+	return (this->_name);
 }
+
+uint32_t ClapTrap::getAttackDamage( void ) const {
+	return (this->_attackDamage);
+}
+

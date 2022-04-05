@@ -1,5 +1,9 @@
 #include "ScavTrap.hpp"
 
+uint32_t ScavTrap::_hitPointsScav = 100;
+uint32_t ScavTrap::_energyPointsScav = 50;
+uint32_t ScavTrap::_attackDamageScav = 20;
+
 ScavTrap::ScavTrap( void ): ClapTrap() {
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
@@ -44,7 +48,7 @@ void    ScavTrap::attack(  std::string const& target ) {
 		return ;
 	}
 	std::cout <<
-		"ScavTrap " + this->_name + " attacks " + target +
+		"ScavTrap " + getName() + " attacks " + target +
 		", causing " +  std::to_string(this->_attackDamage) +
 		" points of damage!"
 		<< std::endl;

@@ -18,9 +18,9 @@ class ClapTrap {
 		uint32_t	getEnergyPoints( void ) const;
 		std::string	getName( void ) const;
 	private:
-		std::string name_;
-		uint32_t    hit_points_;
-		uint32_t    energy_points_;
-		uint32_t    attack_damage_;
+		std::string _name;
+		uint32_t    _hitPoints;
+		uint32_t    _energyPoints;
+		uint32_t    _attackDamage;
 };
 #endif

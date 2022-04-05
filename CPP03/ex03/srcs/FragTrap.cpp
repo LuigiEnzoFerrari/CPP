@@ -1,5 +1,9 @@
 #include "FragTrap.hpp"
 
+uint32_t FragTrap::_hitPointsFrag = 100;
+uint32_t FragTrap::_energyPointsFrag = 100;
+uint32_t FragTrap::_attackDamageFrag = 30;
+
 FragTrap::FragTrap( void ): ClapTrap() {
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;

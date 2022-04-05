@@ -8,7 +8,7 @@ void    printStatus(FragTrap& rafael) {
 
 
 int main(void) {
-	FragTrap rafael;
+	FragTrap rafael("Rafael");
 
 	printStatus(rafael);
 	std::cout << std::endl;
