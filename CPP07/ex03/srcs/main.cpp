@@ -2,18 +2,18 @@
 #include <iostream>
 
 template <typename T>
-void    asciiNumbers(T& a){
-	static T n = 33;
+void    addNumbers(T& a){
+	static T n = 32;
 
 	n++;
-	if (n > 126)
-		n = 32;
-	a = n;
+	a += n;
 }
 
 template <typename T>
 void	initFloat(T& a) {
-	 a = 2.3	;
+    static float n = 2.2;
+    n += 1.3;
+	a = n;
 }
 
 template <typename T>
@@ -31,12 +31,12 @@ void	applyTest(Array<T>& array) {
 		std::cout << std::endl << std::endl;
 
 		std::cout << "after iter values: " << std::endl;
-		array.applyIter(asciiNumbers);
+		array.applyIter(addNumbers);
 		array.applyIter(print);
 		std::cout << std::endl << std::endl;
 
 
-		std::cout << "array[16]: " << array[16];
+		std::cout << "array[13]: " << array[13];
 		std::cout << std::endl << std::endl;
 	}  catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
@@ -44,22 +44,25 @@ void	applyTest(Array<T>& array) {
 }
 
 int main( void ) {
-	Array<int> one(34);
+	Array<int> one(25);
 	Array<char> two(20);
-	Array<float> three(22);
-	Array<double> four(17);
+	Array<float> three(18);
+	Array<double> four(15);
 	Array<int> five(10);
 
 	std::cout << "---<int>---" << std::endl;
 	applyTest(one);
 	std::cout << "---<char>---" << std::endl;
 	applyTest(two);
+
 	std::cout << "---<float>---" << std::endl;
 	three.applyIter(initFloat);
 	applyTest(three);
+
 	std::cout << "---<Double>---" << std::endl;
 	four.applyIter(initFloat);
 	applyTest(four);
+
 	std::cout << "--- Out of Range ---" << std::endl;
 	applyTest(five);
 	return (0);

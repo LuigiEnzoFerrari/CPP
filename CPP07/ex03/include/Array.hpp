@@ -6,12 +6,16 @@
 
 template <typename T>
 class Array {
+	private:
+		T*			array_;
+		uint32_t	size_;
+
 	public:
 		Array( void ): size_(0), array_(NULL) {
 
 		};
 
-		Array( uint32_t n ): size_(n), array_(new T[n]()) {
+		Array( uint32_t n ): array_(new T[n]()), size_(n) {
 
 		};
 
@@ -52,10 +56,6 @@ class Array {
 		~Array( void ) {
 			delete[] this->array_;
 		};
-
-	private:
-		T*			array_;
-		uint32_t	size_;
 };
 
 #endif

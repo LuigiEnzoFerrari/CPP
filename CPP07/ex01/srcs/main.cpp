@@ -8,12 +8,12 @@ void print(T& a) {
 
 template<typename T>
 void    increment(T& a) {
-    a ++;
+    a++;
 }
 
 template<typename T>
 void    decrement(T& a) {
-    a --;
+    a--;
 }
 
 int main ( void ) {
@@ -21,16 +21,25 @@ int main ( void ) {
     char array2[4] = { 'b', 'c', 'd', 'e' };
     float array3[4] = { 4.2, 3.1, 5.5, 14 };
 
-    iter(array, (size_t)4, increment);
     iter(array, (size_t)4, print);
     std::cout << std::endl;
 
-    iter(array2, (size_t)4, decrement);
+    iter(array, (size_t)4, increment);
+    iter(array, (size_t)4, print);
+    std::cout << std::endl << std::endl;
+
     iter(array2, (size_t)4, print);
     std::cout << std::endl;
 
     iter(array2, (size_t)4, decrement);
+    iter(array2, (size_t)4, print);
+    std::cout << std::endl << std::endl;
+
     iter(array3, (size_t)4, print);
     std::cout << std::endl;
+
+    iter(array3, (size_t)4, decrement);
+    iter(array3, (size_t)4, print);
+    std::cout << std::endl << std::endl;
     return (0);
 }
