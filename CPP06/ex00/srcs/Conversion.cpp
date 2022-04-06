@@ -4,7 +4,7 @@ Conversion::Conversion( void ): _target("42") {
 }
 
 Conversion::Conversion( std::string target ): _target(target) {
-	if (isdigit(target[0]) == false && target.length() > 1) {
+	if (isdigit(target[0]) == false) {
 		throw Conversion::NotaValidInput();
 	}
 }
@@ -35,7 +35,7 @@ void	Conversion::setTarget( std::string target ) {
 		if (isdigit(target[1]) == false)
 			throw Conversion::NotaValidInput();
 	}
-	else if (isdigit(target[0]) == false && target.length() > 1)
+	else if (isdigit(target[0]) == false)
 		throw Conversion::NotaValidInput();
 	this->_target = target;
 }
@@ -57,6 +57,7 @@ float	Conversion::toFloat( void ) const {
 		static_cast<float>(std::atof(this->_target.c_str()))
 	);
 }
+
 double	Conversion::toDouble( void ) const {
 	return (
 		static_cast<double>(std::atof(this->_target.c_str()))

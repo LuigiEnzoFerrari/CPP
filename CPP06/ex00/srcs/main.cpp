@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 
 void    printChar(Conversion &luigi) {
-        std::cout << luigi.getTarget() << std::endl;
-        if ( isprint(luigi.toInt()) )
+
+        if ( luigi.toInt() >= 32 && luigi.toInt() <= 126 )
             std::cout << "char: " << luigi.toChar() << std::endl;
         else
             std::cout << "char: " << "Non displayable" << std::endl;
@@ -39,7 +39,8 @@ void    printDouble(Conversion &luigi) {
     }
 }
 
-void    print_all(Conversion &luigi, char *str) {
+void    print_all(char *str) {
+    Conversion luigi;
     try {
         luigi.setTarget(str);
         printChar(luigi);
@@ -47,7 +48,6 @@ void    print_all(Conversion &luigi, char *str) {
         printFloat(luigi);
         printDouble(luigi);
     } catch ( std::exception &e ) {
-        std::cout << luigi.getTarget() << std::endl;
         std::cout << "char: " << "impossible" << std::endl;
         std::cout << "int: " << "impossible" << std::endl;
         std::cout << "float: " << "nanf" << std::endl;
@@ -60,7 +60,5 @@ int main(int argc, char **argv) {
         std::cout << "error" << std::endl;
         return 1;
     }
-    Conversion luigi;
-    
-    print_all(luigi, argv[1]);
+    print_all(argv[1]);
 }

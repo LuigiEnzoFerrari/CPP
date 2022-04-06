@@ -11,21 +11,21 @@ Data*	deserialize(uintptr_t raw) {
 }
 
 int main( void ) {
-	Data one;
+	Data data;
 
-	one.value = 42;
+	data.value = 42;
     std::cout << "Init Data" << std::endl;
-	std::cout << "Memory Adress: " << &one << std::endl;
-	std::cout << "Data value: " << one.value << std::endl;
+	std::cout << "Memory Adress: " << &data << std::endl;
+	std::cout << "Data value: " << data.value << std::endl;
     std::cout << std::endl;
 
     std::cout << "Serialize Data" << std::endl;
-	uintptr_t	raw = serialize(&one);
+	uintptr_t	raw = serialize(&data);
 	std::cout << "Serialize value: " << raw << std::endl;
-    std::cout << "In hexadecimal: " << std::hex << raw << std::endl;
+    std::cout << "In hexadecimal: 0x" << std::hex << raw << std::endl;
     std::cout << std::dec << std::endl;
 
-    std::cout << "Serialize Data" << std::endl;
+    std::cout << "Deserialize Data" << std::endl;
 	Data *two = deserialize(raw);
 	std::cout << "Memory Adress: " << two << std::endl;
 	std::cout << "Data value: " << two->value << std::endl;

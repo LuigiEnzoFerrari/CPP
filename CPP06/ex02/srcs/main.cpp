@@ -18,19 +18,15 @@ void    identify(Base* p) {
 }
 
 void    identify(Base& p) {
-	if (&p == NULL) {
-		std::cout << "NULL" << std::endl;
-		return ;
-	}
-	try { &dynamic_cast<A &>(p);
+	try { dynamic_cast<A &>(p);
 		std::cout << "A" << std::endl;
 	} catch (const std::bad_cast &e) {}
 
-	try { &dynamic_cast<B &>(p);
+	try { dynamic_cast<B &>(p);
 		std::cout << "B" << std::endl;
 	} catch (const std::bad_cast &e) {}
 
-	try { &dynamic_cast<C &>(p);
+	try { dynamic_cast<C &>(p);
 		std::cout << "C" << std::endl;
 	} catch (const std::bad_cast &e) {}
 }
