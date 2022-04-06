@@ -21,7 +21,7 @@ class Conversion {
 		std::string	getTarget( void ) const;
 
 	private:
-		std::string	target_;
+		std::string	_target;
 
 		struct NotaValidInput: public std::exception {
 			const char *what() const throw();
