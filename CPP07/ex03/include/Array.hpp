@@ -38,6 +38,7 @@ class Array {
 				this->array_ = rhs.array_;
 				this->size_ = rhs.size_;
 			}
+            return (*this);
 		};
 
 		struct OutOfRange: public std::exception {
@@ -54,7 +55,7 @@ class Array {
 		}
 
 		~Array( void ) {
-			delete[] this->array_;
+			// delete[] this->array_;
 		};
 };
 

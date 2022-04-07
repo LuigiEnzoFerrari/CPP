@@ -35,9 +35,10 @@ void	testShortestSpan(int n, int m) {
 	std::vector<int> vec = randomVector(m);
 	std::vector<int>::iterator it = vec.begin();
 
-	for (; it != vec.end(); it++)
+	for (; it != vec.end(); it++) {
 		span.addNumber(*it);
-		span.print();
+	}
+	span.print();
 	std::cout << "Shortest span: " << span.shortestSpan() << std::endl;
 }
 
@@ -46,9 +47,10 @@ void	testLongestSpan(int n, int m) {
 	std::vector<int> vec = randomVector(m);
 	std::vector<int>::iterator it = vec.begin();
 
-	for (; it != vec.end(); it++)
+	for (; it != vec.end(); it++) {
 		span.addNumber(*it);
-		span.print();
+	}
+	span.print();
 	std::cout << "Longest span: " << span.longestSpan() << std::endl;
 }
 

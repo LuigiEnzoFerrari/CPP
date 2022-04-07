@@ -9,13 +9,33 @@ std::string	Contact::get_contact(const char *str) {
 	return (input);
 }
 
-void Contact::get_contact_info() {
-	this->first_name = get_contact("First Name");
-	this->last_name = get_contact("Last Name");
-	this->nick_name = get_contact("Nick Name");
-	this->phone_number = get_contact("Phone Number");
-	this->darkest_secret = get_contact("Darkest Secret");
+void Contact::getInputInfos() {
+	this->_firstName = get_contact("First Name");
+	this->_lastName = get_contact("Last Name");
+	this->_nickName = get_contact("Nick Name");
+	this->_phoneNumber = get_contact("Phone Number");
+	this->_darkestSecret = get_contact("Darkest Secret");
 }
 
 Contact::Contact( void ) {
+}
+
+std::string Contact::getFirstName( void ) const {
+    return (this->_firstName);
+}
+
+std::string Contact::getLastName( void ) const {
+    return (this->_lastName);
+}
+
+std::string Contact::getNickname( void ) const {
+    return (this->_nickName);
+}
+
+std::string Contact::getPhoneNumber( void ) const {
+    return (this->_phoneNumber);
+}
+
+std::string Contact::getDarkestSecret( void ) const {
+    return (this->_darkestSecret);
 }

@@ -6,11 +6,12 @@ class   PhoneBook {
 	private:
 		int	n;
 	public:
-		Contact contatos[8];
+		Contact contacts[8];
 		PhoneBook();
-		void	add_contacts(Contact contato);
-		void	print_contact(int i);
-		void	print_contacts();
+		void	addContacts(Contact contact);
+		void	printContactInfo(int i);
+		void	printContacts();
+        void    displayContact( std::string contact) const;
 };
 
 #endif
