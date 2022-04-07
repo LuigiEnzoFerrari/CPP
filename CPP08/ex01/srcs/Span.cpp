@@ -75,15 +75,8 @@ int	Span::shortestSpan( void ) {
 int	Span::longestSpan( void ) {
 	if (this->_vec.size() < 2)
 		throw Span::SpanHasNotEnoughValuesToCompare();
-	std::vector<int> vector = this->_vec;
-	std::sort(vector.begin(), vector.end());
-	std::vector<int>::iterator it = vector.begin();
-	int span = std::abs(*it - *(it + 1));
 
-	while (it + 1 != vector.end()) {
-		if (span < std::abs(*it - *(it + 1)))
-			span = std::abs(*it - *(it + 1));
-		it++;
-	}
-	return (span);
+    int    big = *std::max_element(this->_vec.begin(), this->_vec.end());
+    int    small = *std::min_element(this->_vec.begin(), this->_vec.end());
+	return (std::abs(big - small));
 }
