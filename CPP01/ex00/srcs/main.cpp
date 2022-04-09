@@ -7,7 +7,7 @@ int main(void) {
     Zombie *new_zombie;
 
     new_zombie = newZombie("Michael Jackson");
-    new_zombie->annouce();
+    new_zombie->announce();
     delete new_zombie;
     randomChump("Kisara");
     return (0);

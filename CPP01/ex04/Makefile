@@ -4,7 +4,7 @@ CC := c++
 CFLAGS := -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 
 SRCSDIR := ./srcs
-SRCS := main.cpp replaceString.cpp
+SRCS := main.cpp ReplaceStrings.cpp
 SRCS_PATHS := $(addprefix $(SRCSDIR)/, $(SRCS))
 
 OBJDIR := ./objs/
