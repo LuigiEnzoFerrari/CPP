@@ -25,7 +25,10 @@ std::cout << "<= " << ((a <= b) ? "a": "b") << std::endl;
 std::cout << "== " << ((a == b) ? "a": "b") << std::endl;
 std::cout << "- " << (a - b) << std::endl;
 std::cout << "+ " << (a + b) << std::endl;
-std::cout << "/ " << (a / b) << std::endl;
 std::cout << "* " << (a * b) << std::endl;
+a.setRawBits(roundf(21 * (1 << 8)));
+Fixed c(4.2f);  
+std::cout << a << " " << c << std::endl;
+std::cout << "/ " << (a / c) << std::endl;
 return (0);
 }

@@ -89,14 +89,14 @@ Fixed   Fixed::operator-( const Fixed& rhs ) {
 Fixed   Fixed::operator*( const Fixed& rhs ) {
 	Fixed temp;
 
-	temp.setRawBits( (this->getRawBits() * rhs.getRawBits()) >> this->_bits );
+	temp.setRawBits( (this->getRawBits() * rhs.getRawBits() ) / (1 << this->_bits) );
 	return (temp);
 }
 
 Fixed   Fixed::operator/( const Fixed& rhs ) {
 	Fixed temp;
 
-	temp.setRawBits( this->getRawBits() / rhs.getRawBits() << this->_bits );
+	temp.setRawBits( (this->getRawBits() / rhs.getRawBits() ) * (1 << this->_bits) );
 	return (temp);
 }
 
