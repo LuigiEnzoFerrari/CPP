@@ -4,8 +4,9 @@ void    printStatus(FragTrap& rafael) {
 	std::cout << "Name: " << rafael.getName() << std::endl;
 	std::cout << "Hit points: " << rafael.getHitPoints() << std::endl;
 	std::cout << "Energy points: " << rafael.getEnergyPoints() << std::endl;
-}
+    std::cout << "Attack damage: " << rafael.getAttackDamage() << std::endl;
 
+}
 
 int main(void) {
 	FragTrap rafael("Rafael");

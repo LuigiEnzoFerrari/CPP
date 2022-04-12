@@ -1,7 +1,10 @@
 #ifndef CLAPTRAP_H
-#define CLAPTRAP_H
+# define CLAPTRAP_H
 
-#include <iostream>
+# include <iostream>
+# include <cstdlib>
+
+typedef unsigned int _uint;
 
 class ClapTrap {
 	public:
@@ -11,16 +14,18 @@ class ClapTrap {
 		ClapTrap&	operator=( const ClapTrap& rhs );
 		~ClapTrap( void );
 		void	attack( const std::string& target );
-		void	takeDamage( uint32_t amount );
-		void	beRepaired( uint32_t amount );
+		void	takeDamage( _uint amount );
+		void	beRepaired( _uint amount );
 
-		uint32_t	getHitPoints( void ) const;
-		uint32_t	getEnergyPoints( void ) const;
+		_uint	getHitPoints( void ) const;
+		_uint	getEnergyPoints( void ) const;
+		_uint	getAttackDamage( void ) const;
 		std::string	getName( void ) const;
 	private:
 		std::string _name;
-		uint32_t    _hitPoints;
-		uint32_t    _energyPoints;
-		uint32_t    _attackDamage;
+		_uint	_hitPoints;
+		_uint	_energyPoints;
+		_uint	_attackDamage;
 };
+
 #endif

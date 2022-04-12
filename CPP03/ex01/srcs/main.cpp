@@ -4,10 +4,10 @@ void    printStatus(ScavTrap& lenzo) {
 	std::cout << "Name: " << lenzo.getName() << std::endl;
 	std::cout << "Hit points: " << lenzo.getHitPoints() << std::endl;
 	std::cout << "Energy points: " << lenzo.getEnergyPoints() << std::endl;
+    std::cout << "Attack damage: " << lenzo.getAttackDamage() << std::endl;
 }
 
-
-int main(void) {
+int main( void ) {
 	ScavTrap lenzo;
 
 	printStatus(lenzo);

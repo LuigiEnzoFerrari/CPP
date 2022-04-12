@@ -1,7 +1,7 @@
 NAME := exec
 
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -Wno-shadow  -g -fsanitize=address
+CFLAGS := -Wall -Wextra -Werror -Wno-shadow -g -fsanitize=address -std=c++98 -pedantic-errors
 
 SRCSDIR := ./srcs
 SRCS := main.cpp DiamondTrap.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp

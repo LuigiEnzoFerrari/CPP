@@ -1,8 +1,8 @@
 #include "ScavTrap.hpp"
 
-uint32_t ScavTrap::_hitPointsScav = 100;
-uint32_t ScavTrap::_energyPointsScav = 50;
-uint32_t ScavTrap::_attackDamageScav = 20;
+_uint ScavTrap::_hitPointsScav = 100;
+_uint ScavTrap::_energyPointsScav = 50;
+_uint ScavTrap::_attackDamageScav = 20;
 
 ScavTrap::ScavTrap( void ): ClapTrap() {
 	this->_hitPoints = 100;
@@ -24,18 +24,18 @@ ScavTrap::~ScavTrap( void ) {
 
 ScavTrap &ScavTrap::operator=( const ScavTrap& rhs ) {
 	if (this != &rhs) {
-        this->_attackDamage = rhs._attackDamage;
-        this->_energyPoints = rhs._energyPoints;
-        this->_hitPoints = rhs._hitPoints;
+		this->_attackDamage = rhs._attackDamage;
+		this->_energyPoints = rhs._energyPoints;
+		this->_hitPoints = rhs._hitPoints;
 	}
 	return (*this);
 }
 
 ScavTrap::ScavTrap( ScavTrap const &src ): ClapTrap(src) {
 	std::cout << "Copy ScavTrap constructor has been called" << std::endl;
-    this->_attackDamage = src._attackDamage;
-    this->_energyPoints = src._energyPoints;
-    this->_hitPoints = src._hitPoints;
+	this->_attackDamage = src._attackDamage;
+	this->_energyPoints = src._energyPoints;
+	this->_hitPoints = src._hitPoints;
 }
 
 void	ScavTrap::guardGate( void ) {
@@ -47,10 +47,10 @@ void    ScavTrap::attack(  std::string const& target ) {
 		std::cout << "There is no energy_points left." << std::endl;
 		return ;
 	}
-	std::cout <<
-		"ScavTrap " + getName() + " attacks " + target +
-		", causing " +  std::to_string(this->_attackDamage) +
-		" points of damage!"
-		<< std::endl;
+	std::cout
+	<< "ScavTrap " << getName()
+	<< " attacks " << target
+	<< ", causing " <<  this->_attackDamage
+	<< " points of damage!" << std::endl;
 		this->_energyPoints--;
 }

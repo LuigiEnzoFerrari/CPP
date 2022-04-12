@@ -12,9 +12,9 @@ class FragTrap: virtual public ClapTrap {
 		virtual ~FragTrap( void );
 		void    highFiveGuys( void );
 	protected:
-		static uint32_t	_hitPointsFrag;
-		static uint32_t	_energyPointsFrag;
-		static uint32_t	_attackDamageFrag;
+		static _uint	_hitPointsFrag;
+		static _uint	_energyPointsFrag;
+		static _uint	_attackDamageFrag;
 };
 
 #endif
