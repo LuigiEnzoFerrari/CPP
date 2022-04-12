@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 20:26:19 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2022/04/05 01:18:28 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2022/04/12 16:39:12 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	setIdeias( Animal *animals, std::string text ) {
 	for ( int i = 0; i < 100; i++ ) {
-		animals->setIdea(i, std::to_string(i) + text);
+		animals->setIdea(i, text);
 	}
 }
 
@@ -34,14 +34,22 @@ int main( void )
 	std::cout << std::endl << "End of constructors" << std::endl << std::endl;
 
 	for (size_t i = 0; i < 4 ; i++) {
-		std::cout << animals[i]->getType() + std::to_string(i) << std::endl;
+		std::cout << animals[i]->getType() << i << std::endl;
 		if (i % 2) {
 			setIdeias(animals[i], " Au Au Au");
 		} else {
 			setIdeias(animals[i], " Miau Miau Miau");
 		}
 	}
-	
+	std::cout << std::endl;
+
+	for (size_t i = 0; i < 4 ; i++) {
+		std::cout << animals[i]->getType() << i << std::endl;
+		for (int j = 0; j < 2; j++) {
+			std::cout << animals[i]->getIdea(j) << std::endl;
+		}
+	}
+
 	std::cout << std::endl << "End of getType and seIdeias" << std::endl << std::endl;
 
 	Cat *cat = (Cat *)animals[0];

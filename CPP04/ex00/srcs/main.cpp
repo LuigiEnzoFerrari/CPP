@@ -5,11 +5,12 @@
 
 int main( void )
 {
-    const Animal* hum = new Animal();
+    const Animal* hum = new Animal("Pomba");
     const Animal* dog = new Dog();
     const Animal* cat = new Cat();
     std::cout << std::endl;
 
+    std::cout << hum->getType() << " " << std::endl;
     std::cout << dog->getType() << " " << std::endl;
     std::cout << cat->getType() << " " << std::endl;
     std::cout << std::endl;

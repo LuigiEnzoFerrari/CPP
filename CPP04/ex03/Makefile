@@ -1,7 +1,8 @@
 NAME := exec
 
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS := -Wall -Wextra -Werror -g -fsanitize=address -std=c++98 -pedantic-errors
+
 
 SRCSDIR := ./srcs
 SRCS := main.cpp Character.cpp AMateria.cpp Ice.cpp Cure.cpp MateriaSource.cpp
