@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 20:26:19 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2022/04/05 17:15:25 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2022/04/13 18:42:54 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,39 +83,55 @@ int main( void )
 	luigi->unequip(1);
 	luigi->unequip(3);
 	luigi->unequip(4);
+	luigi->unequip(2);
 
 	giveBreakLines(2);
 	std::cout << "---MateriaSource constructor:---" << std::endl;
-    IMateriaSource *src = new MateriaSource();
+	IMateriaSource *src = new MateriaSource();
 
 	giveBreakLines(2);
 	std::cout << "---LearnMateria:---" << std::endl;
-    src->learnMateria(ice);
-    src->learnMateria(cure);
-    src->learnMateria(ice2);
-    src->learnMateria(cure2);
-    src->learnMateria(ice3);
+	src->learnMateria(ice);
+	src->learnMateria(cure);
+	src->learnMateria(ice2);
+	src->learnMateria(cure2);
+	src->learnMateria(ice3);
 
 	giveBreakLines(2);
 	std::cout << "---CreateMateria:---" << std::endl;
-    AMateria *cpy = src->createMateria("ice");
-    AMateria *cpy2 = src->createMateria("DontExist");
-    std::cout << "var cpy: " << cpy->getType() << std::endl;
-    std::cout << "var cpy2: " << cpy2 << std::endl;
+	AMateria *cpy = src->createMateria("ice");
+	AMateria *cpy2 = src->createMateria("DontExist");
+	std::cout << "var cpy: " << cpy->getType() << std::endl;
+	std::cout << "var cpy2: " << cpy2 << std::endl;
 
 	giveBreakLines(2);
 	std::cout << "---Destructros:---" << std::endl;
 
-	delete ice;
-	delete cure;
-	delete ice2;
-	delete cure2;
 	delete ice3;
 	delete luigi;
 	delete lenzo;
-    delete src;
-    delete cpy;
-    delete cpy2;
+	delete src;
+	delete cpy;
+	delete cpy2;
 
+	giveBreakLines(2);
+
+	{
+		IMateriaSource* src = new MateriaSource();
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		ICharacter* me = new Character("me");
+		AMateria* tmp;
+		tmp = src->createMateria("ice");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		ICharacter* bob = new Character("bob");
+		me->use(0, *bob);
+		me->use(1, *bob);
+		delete bob;
+		delete me;
+		delete src;
+	}
 	return (0);
 }

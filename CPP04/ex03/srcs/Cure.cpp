@@ -22,5 +22,5 @@ Cure* Cure::clone( void ) const {
 }
 
 void    Cure::use(ICharacter& target) {
-	std::cout << "* shoots an "<< this->getType() <<" bolt at " << target.getName() << std::endl;
+	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }

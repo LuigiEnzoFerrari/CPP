@@ -3,7 +3,6 @@ NAME := exec
 CC := c++
 CFLAGS := -Wall -Wextra -Werror -g -fsanitize=address -std=c++98 -pedantic-errors
 
-
 SRCSDIR := ./srcs
 SRCS := main.cpp Character.cpp AMateria.cpp Ice.cpp Cure.cpp MateriaSource.cpp
 SRCS_PATHS := $(addprefix $(SRCSDIR)/, $(SRCS))

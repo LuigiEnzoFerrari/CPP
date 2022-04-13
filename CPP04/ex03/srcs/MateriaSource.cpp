@@ -21,6 +21,12 @@ MateriaSource& MateriaSource::operator=( MateriaSource const & rhs ) {
 
 MateriaSource::~MateriaSource( void ) {
 	std::cout << "MateriaSource destroyed" << std::endl;
+    for (int i = 0; i < 4; i++) {
+		if (this->_inventory[i] != NULL) {
+			delete this->_inventory[i];
+			this->_inventory[i] = NULL;
+		}
+    }
 }
 
 void    MateriaSource::learnMateria(AMateria* m) {

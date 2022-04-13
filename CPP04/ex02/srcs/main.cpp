@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 20:26:19 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2022/04/12 16:39:12 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2022/04/13 19:11:40 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,15 @@ int main( void )
 	Cat copyCat(*cat);
 	Dog copyDog(*dog);
 
-	std::cout << std::endl << "End of Copy Constructors" << std::endl << std::endl;
+	std::cout << std::endl << "End of copy constructors" << std::endl << std::endl;
+
+	copyCat.setIdea(1, " banana com nescau");
+	std::cout << cat->getType() << std::endl;
+	std::cout << cat->getIdea(1) << std::endl;
+	std::cout << copyCat.getType() << std::endl;
+	std::cout << copyCat.getIdea(1) << std::endl;
+	
+	std::cout << std::endl << "End of copy getType and seIdeias" << std::endl << std::endl;
 
 	for (size_t i = 0; i < 4 ; i++) {
 		if (i % 2) {

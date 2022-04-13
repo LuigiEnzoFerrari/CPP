@@ -13,21 +13,27 @@ Character::Character( std::string  const name ): _name(name) {
 }
 
 Character::Character( Character const & src ): _name(src._name) {
-    for (int i = 0; i < 4; i++)
-        this->_inventory[i] = src._inventory[i];
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = src._inventory[i];
 }
 
 Character& Character::operator=( Character const & rhs ) {
-    if (this != &rhs) {
-        this->_name = rhs._name;
-        for (int i = 0; i < 4; i++)
-            this->_inventory[i] = rhs._inventory[i];
-    }
-    return *this;
+	if (this != &rhs) {
+		this->_name = rhs._name;
+		for (int i = 0; i < 4; i++)
+			this->_inventory[i] = rhs._inventory[i];
+	}
+	return *this;
 }
 
 Character::~Character( void ) {
 	std::cout << "Character destroyed" << std::endl;
+	for (int i = 0; i < 4; i++) {
+		if (this->_inventory[i] != NULL) {
+			delete this->_inventory[i];
+			this->_inventory[i] = NULL;
+		}
+	}
 }
 
 std::string const& Character::getName( void ) const {
