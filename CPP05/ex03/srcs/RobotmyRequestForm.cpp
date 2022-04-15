@@ -28,7 +28,7 @@ const std::string RobotmyRequestForm::getTarget( void ) const {
 }
 
 void	RobotmyRequestForm::execute( Bureaucrat& bure ) const {
-	srand(time(NULL));
+	std::srand(time(NULL));
 	if (this->getSigned() == false) {
 		throw RobotmyRequestForm::IsNotSignedToExecute();
 	} else if (this->getGradeToExec() < bure.getGrade()) {

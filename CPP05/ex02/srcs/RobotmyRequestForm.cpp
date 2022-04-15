@@ -1,5 +1,6 @@
 #include "RobotmyRequestForm.hpp"
 
+
 RobotmyRequestForm::RobotmyRequestForm( void ):
 	Form("RobotmyRequestForm", 72, 45), _target("house") {
 }
@@ -35,7 +36,7 @@ void	RobotmyRequestForm::execute( Bureaucrat& bure ) const {
 		throw RobotmyRequestForm::GradeTooLowException();
 	} else {
 		std::cout << "Bip bop bip bop " << std::endl;
-		if (std::rand() % 2) {
+		if (rand() % 2) {
 			std::cout << _target << " has been robotomized" << std::endl;
 		} else {
 			std::cout << _target << " hasn't been robotomized" << std::endl;

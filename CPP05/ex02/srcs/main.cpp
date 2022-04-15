@@ -50,13 +50,11 @@ int main( void ) {
 	Bureaucrat  aroque("Adrian", 10);
 	Bureaucrat  gadino("Gustavo", 136);
 
-
 	trySigned(pardon, lenzo);
 	trySigned(robot, aroque);
 	trySigned(shruberry, gadino);
 
 	Bureaucrat victor("victor", 60);
-
 
 	std::cout << "Name: " << victor.getName() << std::endl;
 	std::cout << "Grade: " << victor.getGrade() << std::endl;

@@ -25,6 +25,9 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat& rhs) {
 }
 
 Bureaucrat   &Bureaucrat::operator++( void ) {
+	if (this->getGrade() - 1 < 1) {
+		throw Bureaucrat::GradeTooHighException();
+	}
 	this->_grade = this->getGrade() - 1;
 	return (*this);
 }
@@ -32,19 +35,27 @@ Bureaucrat   &Bureaucrat::operator++( void ) {
 Bureaucrat   Bureaucrat::operator++( int ) {
 	Bureaucrat temp(*this);
 
-	this->_grade = this->getGrade() + 1;
+	if (this->getGrade() - 1 < 1) {
+		throw Bureaucrat::GradeTooHighException();
+	}
+	this->_grade = this->getGrade() - 1;
 	return (temp);
 }
 
 Bureaucrat&	Bureaucrat::operator--( void ) {
-	this->_grade = this->getGrade() - 1;
+	if (this->getGrade() + 1 > 150) {
+		throw Bureaucrat::GradeTooLowException();
+	}
+	this->_grade = this->getGrade() + 1;
 	return (*this);
 }
 
 Bureaucrat   Bureaucrat::operator--( int ) {
 	Bureaucrat temp(*this);
-
-	this->_grade = this->getGrade() - 1;
+	if (this->getGrade() + 1 > 150) {
+		throw Bureaucrat::GradeTooLowException();
+	}
+	this->_grade = this->getGrade() + 1;
 	return (temp);
 }
 
@@ -64,25 +75,21 @@ int	Bureaucrat::getGrade( void ) const {
 	return (this->_grade);
 }
 
-void	Bureaucrat::addGrade( int add ) {
-	this->_grade += add;
-	if (this->_grade > 150) {
+void	Bureaucrat::downGrade( int add ) {
+	if (this->_grade + add > 150) {
 		throw Bureaucrat::GradeTooLowException();
-	} else if (this->_grade < 1) {
-		throw Bureaucrat::GradeTooHighException();
 	}
+	this->_grade += add;
 }
 
-void	Bureaucrat::removeGrade( int remove ) {
-	this->_grade -= remove;
-	if (this->_grade < 1) {
+void	Bureaucrat::upGrade( int remove ) {
+	if (this->_grade - remove < 1) {
 		throw Bureaucrat::GradeTooHighException();
-	} else if (this->_grade > 150) {
-		throw Bureaucrat::GradeTooLowException();
 	}
+	this->_grade -= remove;
 }
 
 std::ostream& operator<<( std::ostream& os, const Bureaucrat& src ) {
-	os << src.getName() << ", bureaucrat grade" << src.getGrade() << std::endl;;
+	os << src.getName() << ", bureaucrat grade" << src.getGrade() << std::endl;
 	return (os);
 }

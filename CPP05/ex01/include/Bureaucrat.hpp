@@ -12,13 +12,19 @@ class Bureaucrat {
 		Bureaucrat( void );
 		Bureaucrat( std::string name, int grade );
 		Bureaucrat( const Bureaucrat& src );
-		Bureaucrat&	operator=( const Bureaucrat& rhs );
 		~Bureaucrat( void );
+
+		Bureaucrat&	operator=( const Bureaucrat& rhs );
+		Bureaucrat&	operator++( void );
+		Bureaucrat	operator++( int );
+		Bureaucrat&	operator--( void );
+		Bureaucrat	operator--( int );
+
 		const	std::string getName( void ) const;
 		int		getGrade( void ) const;
-		void	addGrade( int add );
-		void	removeGrade( int remove );
-        void    signForm ( Form &signedForm );
+		void	downGrade( int add );
+		void	upGrade( int remove );
+		void    signForm ( Form &signedForm );
 
 	private:
 		const std::string	_name;

@@ -1,6 +1,7 @@
 #ifndef ROBOTMYREQUESTFORM_H
 # define ROBOTMYREQUESTFORM_H
-#include "Form.hpp"
+# include "Form.hpp"
+# include <cstdlib>
 
 class   RobotmyRequestForm: public Form {
 	public:
