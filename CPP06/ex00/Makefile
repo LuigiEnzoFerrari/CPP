@@ -1,7 +1,7 @@
 NAME := exec
 
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -g -fsanitize=address -pedantic-errors
+CFLAGS := -Wall -Wextra -Werror -g -fsanitize=address -std=c++98 -pedantic-errors
 
 SRCSDIR := ./srcs
 SRCS := main.cpp Conversion.cpp

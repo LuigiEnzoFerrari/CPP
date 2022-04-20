@@ -1,6 +1,6 @@
 # include "Data.hpp"
 # include <iostream>
-# include <cstdint>
+# include <stdint.h>
 
 uintptr_t	serialize(Data* ptr) {
 	return reinterpret_cast<uintptr_t>(ptr);
