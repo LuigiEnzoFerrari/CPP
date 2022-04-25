@@ -1,21 +1,22 @@
 #ifndef ARRAY_H
 # define ARRAY_H
 
-# include <cstdint>
+# include <stdint.h>
 # include <exception>
+# include <cstddef>
 
 template <typename T>
 class Array {
 	private:
-		T*			array_;
-		uint32_t	size_;
+		T*			_array;
+		uint32_t	_size;
 
 	public:
-		Array( void ): size_(0), array_(NULL) {
+		Array( void ): _size(0), _array(NULL) {
 
 		};
 
-		Array( uint32_t n ): array_(new T[n]()), size_(n) {
+		Array( uint32_t n ): _array(new T[n]()), _size(n) {
 
 		};
 
@@ -24,19 +25,19 @@ class Array {
 		};
 
 		void	applyIter(void (f)(T&)) {
-			for (size_t i = 0; i < this->size_; i++) {
-				f(this->array_[i]);
+			for (uint32_t i = 0; i < this->_size; i++) {
+				f(this->_array[i]);
 			}
 		};
 
 		uint32_t size( void ) {
-			return (this->size_);
+			return (this->_size);
 		};
 
 		Array&	operator=( const Array& rhs ) {
 			if (this != &rhs) {
-				this->array_ = rhs.array_;
-				this->size_ = rhs.size_;
+				this->_array = rhs._array;
+				this->_size = rhs._size;
 			}
             return (*this);
 		};
@@ -48,14 +49,14 @@ class Array {
 		};
 
 		T&	operator[]( uint32_t index ) {
-			if (index >= size_) {
+			if (index >= _size) {
 				throw Array::OutOfRange();
 			}
-			return (this->array_[index]);
+			return (this->_array[index]);
 		}
 
 		~Array( void ) {
-			// delete[] this->array_;
+			delete[] this->_array;
 		};
 };
 

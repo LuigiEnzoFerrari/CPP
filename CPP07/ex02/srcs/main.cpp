@@ -35,10 +35,10 @@ void	applyTest(Array<T>& array) {
 		array.applyIter(print);
 		std::cout << std::endl << std::endl;
 
-
 		std::cout << "array[13]: " << array[13];
 		std::cout << std::endl << std::endl;
-	}  catch (std::exception &e) {
+	}
+    catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 }
