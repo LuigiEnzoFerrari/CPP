@@ -3,6 +3,7 @@
 #include "C.hpp"
 #include <ctime>
 #include <iostream>
+#include <cmath>
 
 void    identify(Base* p) {
 	if (p == NULL)
@@ -18,30 +19,31 @@ void    identify(Base* p) {
 }
 
 void    identify(Base& p) {
-	try { dynamic_cast<A &>(p);
+	try { (void)dynamic_cast<A &>(p);
 		std::cout << "A" << std::endl;
-	} catch (const std::bad_cast &e) {}
+	} catch (...) {}
 
-	try { dynamic_cast<B &>(p);
+	try { (void)dynamic_cast<B &>(p);
 		std::cout << "B" << std::endl;
-	} catch (const std::bad_cast &e) {}
+	} catch (...) {}
 
-	try { dynamic_cast<C &>(p);
+	try { (void)dynamic_cast<C &>(p);
 		std::cout << "C" << std::endl;
-	} catch (const std::bad_cast &e) {}
+	} catch (...) {}
 }
 
 Base    *getClass() {
-	uint32_t random;
+	int random;
 
 	srand(time(NULL));
-	random = std::rand() % 3;
+	random = rand() % 3;
 	if (random == 0)
 		return (new A());
-	else if (random == 0)
+	else if (random == 1)
 		return (new B());
 	else
 		return (new C());
+    return (NULL);
 }
 
 int main( void ) {
