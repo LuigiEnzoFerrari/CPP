@@ -12,12 +12,10 @@ class Array {
 		uint32_t	_size;
 
 	public:
-		Array( void ): _size(0), _array(NULL) {
-
+		Array( void ): _array(NULL), _size(0) {
 		};
 
 		Array( uint32_t n ): _array(new T[n]()), _size(n) {
-
 		};
 
 		Array( const Array& src ) {

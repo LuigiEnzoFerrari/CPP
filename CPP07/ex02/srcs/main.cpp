@@ -51,6 +51,8 @@ int main( void ) {
 	Array<float> three(18);
 	Array<double> four(15);
 	Array<int> five(10);
+    Array<int> empty;
+
 
 	std::cout << "---<int>---" << std::endl;
 	applyTest(one);
@@ -64,6 +66,9 @@ int main( void ) {
 	std::cout << "---<Double>---" << std::endl;
 	four.applyIter(initFloat);
 	applyTest(four);
+
+	std::cout << "---<Empty>---" << std::endl;
+	applyTest(empty);
 
 	std::cout << "--- Out of Range ---" << std::endl;
 	applyTest(five);
