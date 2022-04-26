@@ -36,8 +36,11 @@ class Array {
 
 		Array&	operator=( const Array& rhs ) {
 			if (this != &rhs) {
-				this->_array = rhs._array;
 				this->_size = rhs._size;
+                this->_array = new T[rhs._size];
+                for (uint32_t i = 0; i < this->_size; i++) {
+                    this->_array[i] = rhs._array[i];
+                }
 			}
             return (*this);
 		};
