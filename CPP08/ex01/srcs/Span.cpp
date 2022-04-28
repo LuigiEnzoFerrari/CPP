@@ -38,8 +38,6 @@ void	Span::addNumber(int n) {
 	if (this->_n == this->_vec.size())
 		throw Span::SpanFullException();
 	this->_vec.push_back(n);
-	if (this->_n == this->_vec.size())
-		this->_vec.shrink_to_fit();
 }
 
 void	Span::print( void ) {

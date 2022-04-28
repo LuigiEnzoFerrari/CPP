@@ -1,7 +1,8 @@
 #include "easyfind.hpp"
 
 int	main( void ) {
-	std::vector<int> luigi = {2, 3, 4, 5};
+	int myints[] = { 1, 2, 3, 4, 5 };
+    std::vector<int> luigi (myints, &myints[5]);
 	std::vector<int>::iterator it;
 	try {
 		it = easyfind(luigi, 3);

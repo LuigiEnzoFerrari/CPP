@@ -74,7 +74,7 @@ int main( void )
 	TryCatch(testShortestSpan, 10, 1);
 	TryCatch(testLongestSpan, 10, 10);
 	TryCatch(testLongestSpan, 10, 1);
-	// TryCatch(testShortestSpan, 10000, 10000);
 	// TryCatch(testLongestSpan, 10000, 10000);
+	// TryCatch(testShortestSpan, 10000, 10000);
 	return 0;
 }
