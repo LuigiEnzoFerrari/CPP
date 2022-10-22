@@ -44,7 +44,7 @@ int main(void) {
 }
 ```
 
-You can have the prototype of the function declare inside de class and the hole code in another file.
+You can have the prototype of the function declare inside the class and the whole code in another file.
 
 ```c++
 // Mario.hpp
