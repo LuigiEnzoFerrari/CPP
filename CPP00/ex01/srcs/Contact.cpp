@@ -1,41 +1,60 @@
 #include "Contact.hpp"
 
-std::string	Contact::get_contact(const char *str) {
-	std::string input;
+Contact::Contact( void ) {};
 
-	std::cout << str << std::endl;
-	std::cin >> std::ws;
-	std::getline(std::cin, input);
-	return (input);
+Contact::~Contact( void ) {};
+
+Contact::Contact( const Contact& src ) {
+	*this = src;
+};
+
+Contact& Contact::operator=( const Contact& rhs ) {
+	if (this != &rhs) {
+		this->_name = rhs._name;
+		this->_lastName = rhs._lastName;
+		this->_nickName = rhs._nickName;
+		this->_phoneNumber = rhs._phoneNumber;
+		this->_darkesSecret = rhs._darkesSecret;
+	}
+	return (*this );
 }
 
-void Contact::getInputInfos() {
-	this->_firstName = get_contact("First Name");
-	this->_lastName = get_contact("Last Name");
-	this->_nickName = get_contact("Nick Name");
-	this->_phoneNumber = get_contact("Phone Number");
-	this->_darkestSecret = get_contact("Darkest Secret");
+std::string	Contact::getName( void ) {
+	return ( this->_name );
+};
+
+std::string	Contact::getLastName ( void ) {
+	return ( this->_lastName );
 }
 
-Contact::Contact( void ) {
+std::string	Contact::getDarkestSecret( void ) {
+	return ( this->_darkesSecret );
 }
 
-std::string Contact::getFirstName( void ) const {
-    return (this->_firstName);
+std::string Contact::getPhoneNumber ( void ) {
+	return ( this->_phoneNumber );
 }
 
-std::string Contact::getLastName( void ) const {
-    return (this->_lastName);
+std::string Contact::getNickName ( void ) {
+	return ( this->_nickName );
 }
 
-std::string Contact::getNickname( void ) const {
-    return (this->_nickName);
+void	Contact::setName( std::string name ) {
+	this->_name = name;
 }
 
-std::string Contact::getPhoneNumber( void ) const {
-    return (this->_phoneNumber);
+void	Contact::setLastName( std::string lastName ) {
+	this->_lastName = lastName;
 }
 
-std::string Contact::getDarkestSecret( void ) const {
-    return (this->_darkestSecret);
+void	Contact::setNickName( std::string nickName ) {
+	this->_nickName = nickName;
+}
+
+void	Contact::setDarkestSecret( std::string darkestSecret ) {
+	this->_darkesSecret = darkestSecret;
+}
+
+void	Contact::setPhoneNumber( std::string phoneNumber ) {
+	this->_phoneNumber = phoneNumber;
 }

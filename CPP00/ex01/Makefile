@@ -1,12 +1,14 @@
 NAME := exec
 
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
+CFLAGS := -Wall -Wextra -Werror -g -fsanitize=address
 
-SRCS := ./srcs/main.cpp ./srcs/Contact.cpp ./srcs/PhoneBook.cpp
+SRCSDIR := ./srcs
+SRCS := main.cpp Contact.cpp PhoneBook.cpp myAwesomePhoneBook.cpp
+SRCS_PATHS := $(addprefix $(SRCSDIR)/, $(SRCS))
 
 OBJDIR := ./objs/
-OBJS := $(addprefix $(OBJDIR), $(notdir $(SRCS:.cpp=.o)))
+OBJS := $(addprefix $(OBJDIR), $(notdir $(SRCS_PATHS:.cpp=.o)))
 
 INC := -I./include/
 

@@ -1,17 +1,21 @@
-#ifndef PhoneBook_H
-#define PhoneBook_H
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 #include "Contact.hpp"
 
-class   PhoneBook {
-	private:
-		int	n;
+class PhoneBook {
 	public:
-		Contact contacts[8];
-		PhoneBook();
-		void	addContacts(Contact contact);
-		void	printContactInfo(int i);
-		void	printContacts();
-        void    displayContact( std::string contact) const;
+		PhoneBook( void );
+		~PhoneBook( void );
+		PhoneBook( const PhoneBook& src );
+		PhoneBook& operator=( const PhoneBook& rhs );
+		int			size( void );
+		void		addContact( const Contact& contacts );
+		Contact*	getContacts( void );
+
+	private:
+		Contact _contacts[8];
+		int		_size;
 };
 
 #endif

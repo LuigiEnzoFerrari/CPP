@@ -1,53 +1,34 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() {
-	this->n = 0;
-}
+PhoneBook::PhoneBook( void ): _size(0) {};
 
-void	PhoneBook::displayContact( std::string contact) const {
-	std::cout << " | ";
-	if (contact.length() < 10) {
-		std::cout.width( 10 );
-		std::cout << contact;
+PhoneBook::~PhoneBook( void ) {};
 
-	}
-	else
-		std::cout << contact.substr(0, 9) << ".";
-}
+PhoneBook::PhoneBook( const PhoneBook &src ): _size(src._size) {
+	*this = src;
+};
 
-void	PhoneBook::addContacts(Contact contact) {
-	this->contacts[n % 8] = contact;
-	n++;
-}
+PhoneBook&	PhoneBook::operator=( const PhoneBook& rhs ) {
+	if ( this != &rhs ) {
+		for (int i = 0; i < 8; i++) {
+			this->_contacts[i] = rhs._contacts[i];
+		}
+		this->_size = rhs._size;
+	}
+	return ( *this );
+};
 
-void	PhoneBook::printContactInfo(int i) {
-	if (i > 7) {
-		std::cout << "Out of range" << std::endl;
-	}
-	else if (i >= n) {
-		std::cout << "There is no such contact" << std::endl;
-	}
-	else if (i < 0) {
-		std::cout << "Invalid number" << std::endl;
-	}
-	else {
-		std::cout << std::endl
-			<< "First name: " << this->contacts[i].getFirstName() << std::endl
-			<< "Last name: " << this->contacts[i].getLastName() << std::endl
-			<< "Nickname: " << this->contacts[i].getNickname() << std::endl
-			<< "Phone number: " << this->contacts[i].getPhoneNumber() << std::endl
-			<< "Darkest secret: " << this->contacts[i].getDarkestSecret() << std::endl;
-	}
-	std::cout << std::endl;
-}
+int	PhoneBook::size( void ) {
+	if (this->_size < 8)
+		return ( this->_size );
+	return ( 8 );
+};
 
-void	PhoneBook::printContacts() {
-	for (int i = 0; i < n && i <= 7; i++) {
-		std::cout << i;
-		this->displayContact(this->contacts[i].getFirstName());
-		this->displayContact(this->contacts[i].getLastName());
-		this->displayContact(this->contacts[i].getNickname());
-		std::cout << std::endl;
-	}
-	std::cout << std::endl;
+void	PhoneBook::addContact( const Contact& contact ) {
+	this->_contacts[this->_size % 8] = contact;
+	this->_size++;
+};
+
+Contact* PhoneBook::getContacts( void ) {
+	return (this->_contacts);
 }
